@@ -93,12 +93,13 @@ public class DriverServiceImpl implements DriverService {
         DriverDTO returnedDriverDTO = driverRepository.findById(id).map(driver -> {
             driver.setStopTime(formattedDate);
             driver.setTicket_active(false);
+            calculateAmountToPay(id);
             DriverDTO returnDTO = driverMapper.driverToDriverDTO(driverRepository.save(driver));
-            return driverDTO;
+            return returnDTO;
         }).orElseThrow(ResourceNotFoundException::new);
 
         returnedDriverDTO.setDriverUrl(getDriverUrl(id));
-        calculateAmountToPay(id);
+
         dayProfitService.saveOrUpdateDayProfit(driverDTO.getTransactionDay());
 
         return returnedDriverDTO;

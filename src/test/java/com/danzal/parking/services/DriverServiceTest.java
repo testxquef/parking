@@ -70,36 +70,6 @@ public class DriverServiceTest {
     }
 
     @Test
-    public void testStopParkingMeter() throws Exception{
-        DriverDTO driverDTO = new DriverDTO();
-        driverDTO.setDriverType(DRIVER_TYPE);
-
-        Driver savedDriver = new Driver();
-        savedDriver.setDriverType(driverDTO.getDriverType());
-        savedDriver.setCurrency(driverDTO.getCurrency());
-        savedDriver.setId(1l);
-
-        Date currDate = new Date();
-        String strDateFormat = "HH:mm:ss";
-        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-        String formattedDate = dateFormat.format(currDate);
-        savedDriver.setStartTime(formattedDate);
-
-        DayProfit savedDay = new DayProfit();
-        savedDay.setDate("2018/06/23");
-
-
-        when(driverRepository.findById(anyLong())).thenReturn(Optional.ofNullable(savedDriver));
-        when(dayProfitRepository.save(any(DayProfit.class))).thenReturn(savedDay);
-
-        DriverDTO savedDTO = driverService.stopParkingMeter(1l);
-
-        assertEquals(driverDTO.getDriverType(), savedDTO.getDriverType());
-        assertEquals("/driver/1", savedDTO.getDriverUrl());
-        assertEquals(formattedDate, savedDTO.getStartTime());
-    }
-
-    @Test
     public void testCheckTicketValid() throws Exception{
         Driver driver = new Driver();
         driver.setTicket_active(true);
