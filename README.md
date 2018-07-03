@@ -1,6 +1,8 @@
-Projekt aplikacji webowej do zarządzania parkomatem.
+### Projekt aplikacji webowej do zarządzania parkomatem.
 
-Aplikacja pozwala na podstawowe funkcjonalności:
+----------
+
+### Aplikacja pozwala na podstawowe funkcjonalności:
   - Dla kierowcy:
       - Start parkometru (naliczania opłaty)  [ POST ] [ /driver/start ]
       - Sprawdzenie kwoty do zapłacenia  [ GET ] [ /driver/{id}/cost ]
@@ -14,11 +16,12 @@ Aplikacja pozwala na podstawowe funkcjonalności:
       - Sprawdzenie zysku za dany dzień [ GET ] [/day/{year}/{month}/{day}/profit ]
       - Sprawdzenie waluty [ GET ] [ /day/{year}/{month}/{day}/currency ]
       
-TESTS: 
+----------      
+### TESTS: 
   - [![CircleCI](https://circleci.com/gh/quefie/parking.svg?style=svg)](https://circleci.com/gh/quefie/parking)
 
-
-Użyte technologie:
+----------
+### Użyte technologie:
 
   - Java,
   - Spring MVC,
