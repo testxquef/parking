@@ -15,7 +15,7 @@ Aplikacja pozwala na podstawowe funkcjonalności:
       - Sprawdzenie waluty [ GET ] [ /day/{year}/{month}/{day}/currency ]
       
 TESTS: 
-  [![CircleCI](https://circleci.com/gh/quefie/parking.svg?style=svg)](https://circleci.com/gh/quefie/parking)
+  - [![CircleCI](https://circleci.com/gh/quefie/parking.svg?style=svg)](https://circleci.com/gh/quefie/parking)
 
 
 Użyte technologie:
