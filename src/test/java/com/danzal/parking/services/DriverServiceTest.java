@@ -1,8 +1,6 @@
 package com.danzal.parking.services;
 
-import com.danzal.parking.controllers.DriverController;
 import com.danzal.parking.domain.Currency;
-import com.danzal.parking.domain.DayProfit;
 import com.danzal.parking.domain.Driver;
 import com.danzal.parking.domain.DriverType;
 import com.danzal.parking.mappers.DayProfitMapper;
@@ -15,16 +13,11 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 public class DriverServiceTest {
@@ -43,16 +36,16 @@ public class DriverServiceTest {
     DayProfitRepository dayProfitRepository;
 
     @Before
-    public void setUp() throws Exception{
+    public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        dayProfitService = new DayProfitServiceImpl(driverRepository ,dayProfitRepository, DayProfitMapper.INSTANCE);
+        dayProfitService = new DayProfitServiceImpl(driverRepository, dayProfitRepository, DayProfitMapper.INSTANCE);
 
-        driverService = new DriverServiceImpl(DriverMapper.INSTANCE,dayProfitService,driverRepository );
+        driverService = new DriverServiceImpl(DriverMapper.INSTANCE, dayProfitService, driverRepository);
     }
 
     @Test
-    public void testStartParkingMeter() throws Exception{
+    public void testStartParkingMeter() throws Exception {
         DriverDTO driverDTO = new DriverDTO();
         driverDTO.setDriverType(DRIVER_TYPE);
 
@@ -70,16 +63,16 @@ public class DriverServiceTest {
     }
 
     @Test
-    public void testCheckTicketValid() throws Exception{
+    public void testCheckTicketValid() throws Exception {
         Driver driver = new Driver();
         driver.setTicket_active(true);
         when(driverRepository.findById(anyLong())).thenReturn(Optional.ofNullable(driver));
 
-        assertEquals(driverService.checkTicketValid(1l) , true);
+        assertEquals(driverService.checkTicketValid(1l), true);
     }
 
     @Test
-    public void testFindDriverById() throws Exception{
+    public void testFindDriverById() throws Exception {
 
         Driver driver = new Driver();
         driver.setId(1l);
@@ -95,7 +88,7 @@ public class DriverServiceTest {
     }
 
     @Test
-    public void testCheckCurrency() throws Exception{
+    public void testCheckCurrency() throws Exception {
 
         Driver driver = new Driver();
         driver.setCurrency(Currency.PLN);
@@ -109,7 +102,7 @@ public class DriverServiceTest {
     }
 
     @Test
-    public void testCheckAmountToPay() throws Exception{
+    public void testCheckAmountToPay() throws Exception {
 
         Driver driver = new Driver();
         driver.setAmountToPay(1f);
