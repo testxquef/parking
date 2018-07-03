@@ -13,17 +13,20 @@ Aplikacja pozwala na podstawowe funkcjonalności:
   - Dla właściciela parkomatu
       - Sprawdzenie zysku za dany dzień [ GET ] [/day/{year}/{month}/{day}/profit ]
       - Sprawdzenie waluty [ GET ] [ /day/{year}/{month}/{day}/currency ]
+      
+TEST: 
+[![CircleCI](https://circleci.com/gh/quefie/parking.svg?style=svg)](https://circleci.com/gh/quefie/parking)
 
 
 Użyte technologie:
 
-Java,
-Spring MVC,
-Hibernate,
-H2 Database,
-Thye,
-Project Lombok,
-jUnit,
-Mockito,
-Maven,
-REST.
+  - Java,
+  - Spring MVC,
+  - Hibernate,
+  - H2 Database,
+  - Thye,
+  - Project Lombok,
+  - jUnit,
+  - Mockito,
+  - Maven,
+  - REST.
