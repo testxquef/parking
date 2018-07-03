@@ -14,8 +14,8 @@ Aplikacja pozwala na podstawowe funkcjonalności:
       - Sprawdzenie zysku za dany dzień [ GET ] [/day/{year}/{month}/{day}/profit ]
       - Sprawdzenie waluty [ GET ] [ /day/{year}/{month}/{day}/currency ]
       
-TEST: 
-[![CircleCI](https://circleci.com/gh/quefie/parking.svg?style=svg)](https://circleci.com/gh/quefie/parking)
+TESTS: 
+  [![CircleCI](https://circleci.com/gh/quefie/parking.svg?style=svg)](https://circleci.com/gh/quefie/parking)
 
 
 Użyte technologie:
